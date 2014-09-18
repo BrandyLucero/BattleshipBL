@@ -10,6 +10,8 @@ namespace BattleshipBL
     {
         static void Main(string[] args)
         {
+            Grid grid = new Grid();
+
         }
     }
 }
