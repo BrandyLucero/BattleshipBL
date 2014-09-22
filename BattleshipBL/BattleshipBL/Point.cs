@@ -17,7 +17,6 @@ namespace BattleshipBL
         public PointStatus Status {get; set;}
         
         public Point (int x, int y, PointStatus Status);
-
     }
 
 }
