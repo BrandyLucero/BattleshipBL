@@ -14,7 +14,10 @@ namespace BattleshipBL
         //define properties
         public Point[,] Ocean { get; set; }
         public List<Ship> ListOfShips { get; set; }
-        public bool AllShipsDestroyed { get; }
+        public bool AllShipsDestroyed
+        {
+            get { return this.ListOfShips.All(x => x.IsDestroyed); }
+        }
         public int CombatRound { get; set; }
 
 
@@ -38,6 +41,9 @@ namespace BattleshipBL
             this.ListOfShips.Add(new Ship(Ship.ShipType.Cruiser));
             this.ListOfShips.Add(new Ship(Ship.ShipType.Submarine));
             this.ListOfShips.Add(new Ship(Ship.ShipType.Minesweeper));
+         
+
+
 
         }
         //Methods and Functions
@@ -51,10 +57,13 @@ namespace BattleshipBL
 
                 if (direction == PlaceShipDirection.Horizontal)
                 {
+                    //if placing horizonal 
+
                     startX++;
                 }
                 else
                 {
+                    //if placing vertical
                     startY++;
                 }
 
@@ -83,20 +92,38 @@ namespace BattleshipBL
                             break;
                     }
                 }
+                //force the consolw to disdplay ocean
+                Console.WriteLine();
+
             }
 
         }
         private void Target(int x, int y)
         {
         //get point from the ocean by using x, y
+            Point aPoint = this.Ocean[x, y];
         //if the PointStatus is Ship, change the Status to Hit
+            if (aPoint.Status == Point.PointStatus.Ship)
+            {
+              aPoint.Status == Point.PointStatus.Hit);
+
+	}
+            }
+
+
         //if the PointStatus is Empty, change the Status to Miss
         }
 
         private void PlayGame()
-        { 
         
-        }
+            while (AllShipsDestroyed)
+        {
 
+           string xinput = string.Empty;
+            string yimput = string.Empty;
+        //while (!"012345789".Contains(xinput
+          }
+        }
+      
     }
 }

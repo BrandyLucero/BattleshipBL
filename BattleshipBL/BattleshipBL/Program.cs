@@ -35,8 +35,6 @@ namespace BattleshipBL
 
         }
 
-
-
         static void DisplayHighScore()
         {
             Console.WriteLine("Display BattleShip High Score");

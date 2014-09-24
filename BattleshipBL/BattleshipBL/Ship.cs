@@ -14,11 +14,16 @@ namespace BattleshipBL
         public ShipType Type { get; set; }
         public List<Point> OccupiedPoints { get; set; }
         public int Length { get; set; }
-        public bool IsDestroyed { get; }
+        public bool IsDestroyed
+        {
+            get { return OccupiedPoints.All(x => x.Status == Point.PointStatus.Hit); }
+        }
 
         //constructor
         public Ship(ShipType typeOfShip)
         {
+            //innitialize the OccupiedPoints list
+            this.OccupiedPoints = new List<Point>();
             this.OccupiedPoints = new List<Point>();
             this.Type = typeOfShip;
 
